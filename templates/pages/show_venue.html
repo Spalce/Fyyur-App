@@ -53,6 +53,7 @@
 		<div class="col-sm-4">
 			<div class="tile tile-show">
 				<img src="{{ show.artist_image_link }}" alt="Show Artist Image" />
+                <h4><a href="/shows/{{ show.show_id }}">{{ show.show_name }}</a></h4>
 				<h5><a href="/artists/{{ show.artist_id }}">{{ show.artist_name }}</a></h5>
 				<h6>{{ show.start_time|datetime('full') }}</h6>
 			</div>
@@ -67,6 +68,7 @@
 		<div class="col-sm-4">
 			<div class="tile tile-show">
 				<img src="{{ show.artist_image_link }}" alt="Show Artist Image" />
+                <h4><a href="/shows/{{ show.show_id }}">{{ show.show_name }}</a></h4>
 				<h5><a href="/artists/{{ show.artist_id }}">{{ show.artist_name }}</a></h5>
 				<h6>{{ show.start_time|datetime('full') }}</h6>
 			</div>
@@ -75,7 +77,11 @@
 	</div>
 </section>
 
-<a href="/venues/{{ venue.id }}/edit"><button class="btn btn-primary btn-lg">Edit</button></a>
+<a href="/venues/{{ venue.id }}/edit"><button class="btn btn-primary btn-lg">Edit venue</button></a>
+
+<form method="post" action="{{ url_for('delete_venue', venue_id=venue.id) }}">
+    <br>
+    <input type="submit" value="Delete venue" class="btn btn-danger btn-lg">
+</form>
 
 {% endblock %}
-

@@ -1,0 +1,19 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Shows Search{% endblock %}
+{% block content %}
+<h3>Number of search results for "{{ search_term }}": {{ results.count }}</h3>
+<ul class="items">
+	{% for shows in results.data %}
+        <li>
+            <a href="/shows/{{ shows.id }}">
+                <i class="fas fa-users"></i>
+                <div class="item">
+                    <h5>
+                        <strong><em>{{ shows.show_name }}</em></strong> | {{ shows.start_time }} | {{ shows.venue_name }} | {{ shows.artist_name }}
+                    </h5>
+                </div>
+            </a>
+        </li>
+	{% endfor %}
+</ul>
+{% endblock %}

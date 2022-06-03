@@ -11,3 +11,6 @@ DEBUG = True
 
 # TODO IMPLEMENT DATABASE URL
 SQLALCHEMY_DATABASE_URI = 'postgresql://{user}:{pw}@{url}/{db}'.format(user="postgres", pw="lookatGodup1&BeSaved", url="localhost:5432", db="fyyur_db")
+
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False

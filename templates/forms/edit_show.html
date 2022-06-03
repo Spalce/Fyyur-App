@@ -3,10 +3,10 @@
 {% block content %}
   <div class="form-wrapper">
     <form method="post" class="form">
-      <h3 class="form-heading">List a new show</h3>
+      <h3 class="form-heading">Edit show <em>{{ show.name }}</em></h3>
       <div class="form-group">
         <label for="name">Show Name</label>
-        {{ form.name(class_ = 'form-control', autofocus = true, placeholder='Show name') }}
+        {{ form.name(class_ = 'form-control', autofocus = true) }}
       </div>
       <div class="form-group">
         <label for="artist_id">Artist Name</label>
@@ -18,9 +18,9 @@
       </div>
       <div class="form-group">
           <label for="start_time">Start Time</label>
-          {{ form.start_time (class_ = 'form-control datepicker', placeholder='YYYY-MM-DD HH:MM', autofocus = true) }}
+          {{ form.start_time(class_ = 'form-control datepicker', placeholder='YYYY-MM-DD HH:MM', autofocus = true) }}
         </div>
-      <input type="submit" value="Create Show" class="btn btn-primary btn-lg btn-block">
+      <input type="submit" value="Edit Show" class="btn btn-primary btn-lg btn-block">
     </form>
   </div>
 {% endblock %}

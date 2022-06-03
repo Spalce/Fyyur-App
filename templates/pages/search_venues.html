@@ -8,7 +8,10 @@
 		<a href="/venues/{{ venue.id }}">
 			<i class="fas fa-music"></i>
 			<div class="item">
-				<h5>{{ venue.name }}</h5>
+				<h5>
+                    {{ venue.name }}
+                    <span class="badge badge-primary">{{ venue.upcoming_shows_count }} upcoming shows</span>
+                </h5>
 			</div>
 		</a>
 	</li>

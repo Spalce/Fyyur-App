@@ -50,6 +50,7 @@
 		<div class="col-sm-4">
 			<div class="tile tile-show">
 				<img src="{{ show.venue_image_link }}" alt="Show Venue Image" />
+                <h4><a href="/shows/{{ show.show_id }}">{{ show.show_name }}</a></h4>
 				<h5><a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a></h5>
 				<h6>{{ show.start_time|datetime('full') }}</h6>
 			</div>
@@ -64,6 +65,7 @@
 		<div class="col-sm-4">
 			<div class="tile tile-show">
 				<img src="{{ show.venue_image_link }}" alt="Show Venue Image" />
+                <h4><a href="/shows/{{ show.show_id }}">{{ show.show_name }}</a></h4>
 				<h5><a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a></h5>
 				<h6>{{ show.start_time|datetime('full') }}</h6>
 			</div>

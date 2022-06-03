@@ -1,0 +1,69 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ show.artist_name }} | Artist{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="monospace">
+			{{ show.show_name }} | {{ show.start_time }}
+		</h1>
+    </div>
+	<div class="col-sm-6">
+        <div class="genres">
+			<h3>Artist Information</h3>
+		</div>
+        <p class="subtitle">
+			Artist: <a href="/artists/{{ show.artist_id }}">{{ show.artist_name }}</a><br>
+		</p>
+        <div class="genres">
+			{% for genre in show.artist_genres %}
+			<span class="genre">{{ genre }}</span>
+			{% endfor %}
+		</div>
+		<p>
+			<i class="fas fa-globe-americas"></i> {{ show.artist_city }}, {{ show.artist_state }}
+		</p>
+		<p>
+			<i class="fas fa-phone-alt"></i> {% if show.artist_phone %}{{ show.artist_phone }}{% else %}No Phone{% endif %}
+        </p>
+        <p>
+			<i class="fas fa-link"></i> {% if show.artist_website %}<a href="{{ show.artist_website }}" target="_blank">{{ show.artist_website }}</a>{% else %}No Website{% endif %}
+		</p>
+		<p>
+			<i class="fab fa-facebook-f"></i> {% if show.artist_facebook_link %}<a href="{{ show.artist_facebook_link }}" target="_blank">{{ show.artist_facebook_link }}</a>{% else %}No Facebook Link{% endif %}
+        </p>
+    <br>
+        <img src="{{ show.artist_image_link }}" class="img-fluid" alt="Venue Image" />
+	</div>
+    <div class="col-sm-6">
+        <div class="genres">
+			<h3>Venue Information</h3>
+		</div>
+        <p class="subtitle">
+			Venue: <a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a><br>
+		</p>
+        <div class="genres">
+			{% for genre in show.venue_genres %}
+			<span class="genre">{{ genre }}</span>
+			{% endfor %}
+		</div>
+		<p>
+			<i class="fas fa-globe-americas"></i> {{ show.venue_city }}, {{ show.venue_state }}
+		</p>
+		<p>
+			<i class="fas fa-phone-alt"></i> {% if show.venue_phone %}{{ show.venue_phone }}{% else %}No Phone{% endif %}
+        </p>
+        <p>
+			<i class="fas fa-link"></i> {% if show.venue_website %}<a href="{{ show.venue_website }}" target="_blank">{{ show.venue_website }}</a>{% else %}No Website{% endif %}
+		</p>
+		<p>
+			<i class="fab fa-facebook-f"></i> {% if show.venue_facebook_link %}<a href="{{ show.venue_facebook_link }}" target="_blank">{{ show.venue_facebook_link }}</a>{% else %}No Facebook Link{% endif %}
+        </p>
+    <br>
+        <img src="{{ show.venue_image_link }}" class="img-fluid" alt="Venue Image" />
+	</div>
+</div>
+    <br>
+<a href="/shows/{{ show.id }}/edit"><button class="btn btn-primary btn-lg">Edit</button></a>
+
+{% endblock %}
+
